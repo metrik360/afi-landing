@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AFI International Group - Implementación integral de sistemas de cumplimiento normativo: SAGRILAFT, SARLAFT, PTEE y Protección de Datos Personales.">
+    <meta name="keywords" content="SARLAFT, SAGRILAFT, PTEE, cumplimiento normativo, gestión de riesgos, auditoría forense, Colombia">
+    <title>AFI International Group | Fortalecemos la confianza empresarial</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/jZzy6pD6/descarga-2-e1759514991690-png-2.webp">
+
+    <style>
+        /* ============================================
+           CSS Variables - Design System AFI
+           ============================================ */
+        :root {
+            /* Colores Primarios */
+            --color-primary: #CE114E;
+            --color-primary-dark: #A00D3D;
+            --color-secondary: #0A1628;
+
+            /* Acentos */
+            --color-accent-gold: #CD981E;
+            --color-accent-blue: #5C8891;
+
+            /* Fondos */
+            --color-bg-primary: #FDFDFD;
+            --color-bg-secondary: #F5F7FA;
+            --color-bg-dark: #0A1628;
+            --color-bg-darker: #050A12;
+
+            /* Textos */
+            --color-text-primary: #0C0D0C;
+            --color-text-secondary: #5C8891;
+            --color-text-light: #FDFDFD;
+
+            /* Bordes */
+            --color-border: #E5E7EB;
+
+            /* Tipografía */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+
+            /* Espaciado */
+            --section-padding: 80px 0;
+            --container-max: 1200px;
+        }
+
+        /* ============================================
+           Reset & Base
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ============================================
+           Typography
+           ============================================ */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .lead {
+            font-size: 18px;
+        }
+
+        /* ============================================
+           Layout
+           ============================================ */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: var(--section-padding);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+            color: var(--color-text-primary);
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           Buttons
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(206, 17, 78, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-text-light);
+            border: 2px solid var(--color-text-light);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+        }
+
+        /* ============================================
+           Section 1: HERO
+           ============================================ */
+        .hero {
+            background-color: var(--color-bg-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            height: 50px;
+        }
+
+        .hero-content {
+            color: var(--color-text-light);
+        }
+
+        .hero-content h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero-content .lead {
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .hero-tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        /* ============================================
+           Section 2: PROBLEMA
+           ============================================ */
+        .problema {
+            background-color: var(--color-bg-primary);
+        }
+
+        .problema-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problema-content h2 {
+            margin-bottom: 32px;
+        }
+
+        .problema-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .problema-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background-color: var(--color-bg-secondary);
+            border-radius: 12px;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .problema-item .icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .problema-item p {
+            color: var(--color-text-primary);
+            font-weight: 500;
+        }
+
+        .problema-cta {
+            margin-top: 40px;
+        }
+
+        .problema-cta p {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-secondary);
+        }
+
+        /* ============================================
+           Section 3: SERVICIOS
+           ============================================ */
+        .servicios {
+            background-color: var(--color-bg-secondary);
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .servicio-card {
+            background-color: var(--color-bg-primary);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .servicio-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-gold) 100%);
+            border-radius: 20px;
+        }
+
+        .servicio-card h3 {
+            margin-bottom: 16px;
+            color: var(--color-text-primary);
+        }
+
+        .servicio-card p {
+            color: var(--color-text-secondary);
+            font-size: 15px;
+        }
+
+        /* ============================================
+           Section 4: POR QUÉ AFI
+           ============================================ */
+        .porque {
+            background-color: var(--color-bg-primary);
+        }
+
+        .porque-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .porque-founder {
+            text-align: center;
+        }
+
+        .porque-founder img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--color-bg-secondary);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .porque-founder h4 {
+            color: var(--color-text-primary);
+            margin-bottom: 4px;
+        }
+
+        .porque-founder span {
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        .porque-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .porque-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .porque-item .icon {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-bg-secondary);
+            border-radius: 12px;
+            font-size: 24px;
+        }
+
+        .porque-item h4 {
+            margin-bottom: 8px;
+            color: var(--color-text-primary);
+        }
+
+        .porque-item p {
+            color: var(--color-text-secondary);
+            font-size: 15px;
+        }
+
+        /* ============================================
+           Section 5: CLIENTES
+           ============================================ */
+        .clientes {
+            background-color: var(--color-bg-secondary);
+        }
+
+        .clientes-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .cliente-logo {
+            height: 50px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .cliente-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .clientes-text {
+            text-align: center;
+            margin-top: 48px;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        /* Placeholder para logos */
+        .logo-placeholder {
+            width: 120px;
+            height: 50px;
+            background-color: var(--color-bg-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-secondary);
+            font-size: 12px;
+            border: 1px dashed var(--color-border);
+        }
+
+        /* ============================================
+           Section 6: ALIADO (MéTRIK)
+           ============================================ */
+        .aliado {
+            background-color: var(--color-bg-primary);
+        }
+
+        .aliado-card {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px;
+            background-color: var(--color-bg-secondary);
+            border-radius: 24px;
+        }
+
+        .aliado-badge {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .aliado-logo {
+            height: 60px;
+            margin-bottom: 24px;
+        }
+
+        .aliado-card p {
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .aliado-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+
+        .aliado-benefit {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-text-primary);
+            font-weight: 500;
+        }
+
+        .aliado-benefit .check {
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        .aliado-slogan {
+            font-style: italic;
+            color: var(--color-secondary);
+            font-size: 18px;
+            margin: 24px 0;
+        }
+
+        /* ============================================
+           Section 7: CTA FINAL
+           ============================================ */
+        .cta-final {
+            background-color: var(--color-bg-dark);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-final h2 {
+            color: var(--color-text-light);
+            margin-bottom: 16px;
+        }
+
+        .cta-final p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           Section 8: FOOTER
+           ============================================ */
+        .footer {
+            background-color: var(--color-bg-darker);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        .footer-contact h4 {
+            color: var(--color-text-light);
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--color-text-light);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+        }
+
+        .footer-powered {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 12px;
+        }
+
+        .footer-powered img {
+            height: 24px;
+            opacity: 0.6;
+        }
+
+        /* ============================================
+           Responsive
+           ============================================ */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-tags {
+                justify-content: center;
+            }
+
+            .servicios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .porque-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .porque-list {
+                grid-template-columns: 1fr;
+            }
+
+            .porque-item {
+                text-align: left;
+            }
+
+            .clientes-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 120px 0 80px;
+            }
+
+            .hero-logo {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 40px;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problema-list {
+                grid-template-columns: 1fr;
+            }
+
+            .clientes-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+
+            .aliado-card {
+                padding: 40px 24px;
+            }
+
+            .aliado-benefits {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         Section 1: HERO
+         ============================================ -->
+    <section class="hero" id="inicio">
+        <img src="https://i.ibb.co/jZzy6pD6/descarga-2-e1759514991690-png-2.webp" alt="AFI International Group" class="hero-logo">
+
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fortalecemos la confianza empresarial</h1>
+                <p class="lead">Implementación integral de sistemas de cumplimiento normativo</p>
+
+                <div class="hero-tags">
+                    <span class="hero-tag">SAGRILAFT</span>
+                    <span class="hero-tag">SARLAFT</span>
+                    <span class="hero-tag">PTEE</span>
+                    <span class="hero-tag">Datos Personales</span>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="https://calendly.com/afisarlaft/30min" target="_blank" class="btn btn-primary">
+                        <span>📅</span> Agendar llamada
+                    </a>
+                    <a href="https://wa.me/573177189028?text=Hola,%20quiero%20información%20sobre%20implementación%20SARLAFT" target="_blank" class="btn btn-secondary">
+                        <span>💬</span> WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Oficina profesional">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Section 2: PROBLEMA
+         ============================================ -->
+    <section class="section problema" id="problema">
+        <div class="container">
+            <div class="problema-content">
+                <h2>¿Tu empresa está obligada a implementar SARLAFT?</h2>
+
+                <div class="problema-list">
+                    <div class="problema-item">
+                        <span class="icon">⚠️</span>
+                        <p>Sanciones económicas significativas por incumplimiento normativo</p>
+                    </div>
+                    <div class="problema-item">
+                        <span class="icon">⚠️</span>
+                        <p>Riesgos legales y daño a la reputación corporativa</p>
+                    </div>
+                    <div class="problema-item">
+                        <span class="icon">⚠️</span>
+                        <p>Pérdida de credibilidad ante stakeholders y autoridades</p>
+                    </div>
+                    <div class="problema-item">
+                        <span class="icon">⚠️</span>
+                        <p>Exposición a lavado de activos y fraude empresarial</p>
+                    </div>
+                </div>
+
+                <div class="problema-cta">
+                    <p>AFI International Group es tu aliado estratégico en cumplimiento normativo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Section 3: SERVICIOS
+         ============================================ -->
+    <section class="section servicios" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Soluciones integrales para el cumplimiento normativo de tu empresa</p>
+            </div>
+
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">🛡️</div>
+                    <h3>SARLAFT / SAGRILAFT</h3>
+                    <p>Sistema de Autocontrol y Gestión del Riesgo Integral de Lavado de Activos y Financiación del Terrorismo</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">📋</div>
+                    <h3>PTEE</h3>
+                    <p>Programa de Transparencia y Ética Empresarial para prevención de corrupción y soborno transnacional</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">🔒</div>
+                    <h3>Protección de Datos</h3>
+                    <p>Cumplimiento de la Ley 1581 de 2012 para el tratamiento seguro de datos personales</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">🔍</div>
+                    <h3>Auditoría Forense</h3>
+                    <p>Detección de vulnerabilidades y prevención de fraudes con análisis técnico especializado</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">📚</div>
+                    <h3>Capacitación</h3>
+                    <p>Diplomado de Oficial de Cumplimiento de 120 horas y formación de equipos internos</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">💼</div>
+                    <h3>Consultoría Estratégica</h3>
+                    <p>Diseño de políticas, manuales y sistemas personalizados para cada organización</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Section 4: POR QUÉ AFI
+         ============================================ -->
+    <section class="section porque" id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por qué elegir AFI?</h2>
+            </div>
+
+            <div class="porque-content">
+                <div class="porque-founder">
+                    <img src="https://i.ibb.co/8LPs3XC4/Gemini-Generated-Image-zfsvnuzfsvnuzfsv.png" alt="Yessica Vasquez - CEO">
+                    <h4>Yessica Vasquez</h4>
+                    <span>CEO</span>
+                </div>
+
+                <div class="porque-list">
+                    <div class="porque-item">
+                        <div class="icon">⚡</div>
+                        <div>
+                            <h4>Velocidad</h4>
+                            <p>Implementación rápida y eficiente que cumple con los plazos regulatorios</p>
+                        </div>
+                    </div>
+
+                    <div class="porque-item">
+                        <div class="icon">✓</div>
+                        <div>
+                            <h4>Confiabilidad</h4>
+                            <p>Resultados comprobados con cientos de empresas en múltiples sectores</p>
+                        </div>
+                    </div>
+
+                    <div class="porque-item">
+                        <div class="icon">👥</div>
+                        <div>
+                            <h4>Equipo Experto</h4>
+                            <p>Profesionales multidisciplinarios en Contaduría, Derecho, Administración e Ingeniería</p>
+                        </div>
+                    </div>
+
+                    <div class="porque-item">
+                        <div class="icon">🤝</div>
+                        <div>
+                            <h4>Acompañamiento</h4>
+                            <p>Desde el diagnóstico inicial hasta la entrega de evidencias y auditoría final</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Section 5: CLIENTES
+         ============================================ -->
+    <section class="section clientes" id="clientes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Empresas que confían en nosotros</h2>
+            </div>
+
+            <div class="clientes-grid">
+                <!-- Placeholders para logos de clientes -->
+                <div class="logo-placeholder">CDA Eco Autos</div>
+                <div class="logo-placeholder">CDA Tecnoriente</div>
+                <div class="logo-placeholder">CDA Guadalupe</div>
+                <div class="logo-placeholder">CDA El Carmen</div>
+                <div class="logo-placeholder">UR Global</div>
+                <div class="logo-placeholder">Constructora Valu</div>
+                <div class="logo-placeholder">CDA Sabana</div>
+                <div class="logo-placeholder">Automás</div>
+                <div class="logo-placeholder">MotoCesar</div>
+                <div class="logo-placeholder">CDA Prado</div>
+                <div class="logo-placeholder">Contraloría Bogotá</div>
+                <div class="logo-placeholder">ASTAF 360</div>
+                <div class="logo-placeholder">TecniCheck</div>
+                <div class="logo-placeholder">CDA Las Delicias</div>
+                <div class="logo-placeholder">CDA Puerto Test</div>
+                <div class="logo-placeholder">CDA Caquetá</div>
+                <div class="logo-placeholder">Coviandina</div>
+                <div class="logo-placeholder">Segar SAS</div>
+            </div>
+
+            <p class="clientes-text">"Experiencia diversificada en sectores público, financiero, transportes, construcción e inversiones"</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Section 6: ALIADO (MéTRIK)
+         ============================================ -->
+    <section class="section aliado" id="aliado">
+        <div class="container">
+            <div class="aliado-card">
+                <span class="aliado-badge">Aliado en Inteligencia de Datos</span>
+
+                <img src="https://i.ibb.co/sdb3Bpq5/M-trik-logo-iso.png" alt="MéTRIK" class="aliado-logo">
+
+                <p>MéTRIK transforma datos operativos en claridad financiera para PYMEs colombianas.</p>
+
+                <p>Con más de 10 años de experiencia en gestión de operaciones y especialización en Business Intelligence, MéTRIK desarrolla los tableros de control que permiten a los CDAs aliados de AFI visualizar su cumplimiento en tiempo real.</p>
+
+                <div class="aliado-benefits">
+                    <div class="aliado-benefit">
+                        <span class="check">✓</span>
+                        <span>Dashboards funcionales en 10 días</span>
+                    </div>
+                    <div class="aliado-benefit">
+                        <span class="check">✓</span>
+                        <span>Integración con sistemas existentes</span>
+                    </div>
+                    <div class="aliado-benefit">
+                        <span class="check">✓</span>
+                        <span>Soporte continuo</span>
+                    </div>
+                </div>
+
+                <p class="aliado-slogan">"Tus números claros, decisiones seguras"</p>
+
+                <a href="https://metrik.com.co" target="_blank" class="btn btn-outline">
+                    Conocer más →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Section 7: CTA FINAL
+         ============================================ -->
+    <section class="cta-final" id="contacto">
+        <div class="container">
+            <h2>¿Listo para fortalecer el cumplimiento de tu empresa?</h2>
+            <p>Agenda una consulta gratuita con nuestros expertos</p>
+
+            <div class="cta-buttons">
+                <a href="https://calendly.com/afisarlaft/30min" target="_blank" class="btn btn-primary">
+                    <span>📅</span> Agendar llamada
+                </a>
+                <a href="https://wa.me/573177189028?text=Hola,%20quiero%20información%20sobre%20implementación%20SARLAFT" target="_blank" class="btn btn-secondary">
+                    <span>💬</span> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         Section 8: FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://i.ibb.co/jZzy6pD6/descarga-2-e1759514991690-png-2.webp" alt="AFI International Group" class="footer-logo">
+                    <p>Aliados estratégicos en la implementación de sistemas de cumplimiento, gestión de riesgos y auditoría.</p>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <span>📧</span>
+                        <a href="mailto:afisarlaft@gmail.com">afisarlaft@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>📞</span>
+                        <span>317 718 9028 – 300 358 5020</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>🌐</span>
+                        <a href="https://afiinternationalgroup.com">afiinternationalgroup.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 AFI International Group. Todos los derechos reservados.</p>
+
+                <div class="footer-powered">
+                    <span>powered by</span>
+                    <img src="https://i.ibb.co/sdb3Bpq5/M-trik-logo-iso.png" alt="MéTRIK">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
